@@ -1,0 +1,80 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  link(href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css')
+  link(rel='stylesheet' href='/css/stylelogin.css')
+  link(rel='stylesheet' href='/css/style.css')
+#slideout-menu
+  ul
+    li
+      a(href='/') Home
+    li
+      a(href='/medtracker') Medicine Timer
+    li
+      a(href='/contact') Contact Ambulance
+    li
+      a(href='/aboutcovid') Covid-19 Precautions
+    li
+      input(type='text' placeholder='Search Here')
+    if user
+      li
+        img#user-photo(src=`/img/users/${user.photo}`)
+        a#navName(href='#')= `Hi, ${user.name}`
+      li
+        a(href='#') Logout
+    else
+      li
+        a(href='/login') Log in
+      li
+        a(href='/signup') Sign up
+nav
+  #logo-img
+    a(href='#')
+      img(src='/img/logo.jpg' alt='Medcare Logo')
+  #menu-icon
+    i.fas.fa-bars
+  ul
+    li
+      a.active(href='/') Home
+    li
+      a(href='/medtracker') Medicine Timer
+    li
+      a(href='/doctors') Contact Doctor
+    li
+      a(href='/aboutcovid') Covid-19 Precautions
+    if user
+      li
+        img#user-photo(src=`/img/users/${user.photo}`)
+        a#navName(href='/me')= `Hi, ${user.name}`
+      li
+        a(id='logoutbtn' href='/') Logout
+    else
+      li
+        a(href='/login') Log in
+      li
+        a(href='/signup') Sign up
+
+.signup
+  .signup-header
+    h1 SignUp
+  .Signin-form
+    h3 Email:
+    input#email(type='email' pattern='.+@globex.com' size='30' required='' placeholder='email')
+    h3 Username:
+    input#name(type='text' placeholder='Username')
+    br
+    h3 Password:
+    input#password(type='password' placeholder='Password')
+    br
+    h3 Password Confirm:
+    input#passwordConfirm(type='password' placeholder='Password')
+    br
+    input.login-button(id='signupBtn' type='button' value='Sign up')
+.error-page
+  .try-again Error: Try again?
+
+script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js")
+//script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.map")
+script(src='/js/signup.js')

@@ -1,0 +1,59 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/css/contactsheet.css')
+  link(rel='stylesheet' href='/css/style.css')
+// Contact
+#contact.form-2
+  .container
+    .row
+      .col-lg-12
+        h2 Contact Information
+        ul.list-unstyled.li-space-lg
+          li.address Don&apos;t hesitate to give us a call or send us a contact form message
+          li
+            i.fas.fa-map-marker-alt
+            | 22 Innovative Area, New Delhi, 110054, In
+          li
+            i.fas.fa-phone
+            a.turquoise(href='tel:003024630820') +91 1234567890
+          li
+            i.fas.fa-envelope
+            a.turquoise(href='mailto:office@evolo.com') hospital@email.com
+          li
+            a(href='tel: 102') Call here 
+      // end of col
+    // end of row
+    .row
+      .col-lg-6
+        .map-responsive
+          iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555098464!2d-122.507640204439!3d37.757814996609724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan+Francisco%2C+CA%2C+USA!5e0!3m2!1sen!2sro!4v1498231462606' allowfullscreen='')
+      // end of col
+      .col-lg-6
+        // Contact Form
+        form#contactForm(data-toggle='validator' data-focus='false')
+          .form-group
+            input#cname.form-control-input(type='text' required='')
+            label.label-control(for='cname') Name
+            .help-block.with-errors
+          .form-group
+            input#cemail.form-control-input(type='email' required='')
+            label.label-control(for='cemail') Email
+            .help-block.with-errors
+          .form-group
+            textarea#cmessage.form-control-textarea(required='')
+            label.label-control(for='cmessage') Your message
+            .help-block.with-errors
+          .form-group.checkbox
+            input#cterms(type='checkbox' value='Agreed-to-Terms' required='')
+            | I have read and agree with Evolo&apos;s stated 
+            a(href='privacy-policy.html') Privacy Policy
+            |  and 
+            a(href='terms-conditions.html') Terms Conditions
+            .help-block.with-errors
+          .form-group
+            button.form-control-submit-button(type='submit') SUBMIT MESSAGE
+          .form-message
+            #cmsgSubmit.h3.text-center.hidden
+        // end of contact form

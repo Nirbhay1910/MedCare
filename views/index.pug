@@ -1,0 +1,135 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.1.0/css/all.css' integrity='sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt' crossorigin='anonymous')
+  link(href='https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab' rel='stylesheet')
+  link(rel='stylesheet' href='/css/style.css')
+  title Welcome
+#slideout-menu
+  ul
+    li
+      a(href='/') Home
+    li
+      a(href='/medtracker') Medicine Timer
+    li
+      a(href='/contact') Contact Ambulance
+    li
+      a(href='/aboutcovid') Covid-19 Precautions
+    li
+      input(type='text' placeholder='Search Here')
+    if user
+      li
+        img#user-photo(src=`/img/users/${user.photo}`)
+        a#navName(href='/me')= `Hi, ${user.name}`
+      li
+        a(href='#') Logout
+    else
+      li
+        a(href='/login') Log in
+      li
+        a(href='/signup') Sign up
+nav
+  #logo-img
+    a(href='#')
+      img(src='/img/logo.jpg' alt='Medcare Logo')
+  #menu-icon
+    i.fas.fa-bars
+  ul
+    li
+      a.active(href='/') Home
+    li
+      a(href='/medtracker') Medicine Timer
+    li
+      a(href='/doctors') Contact Doctor
+    li
+      a(href='/aboutcovid') Covid-19 Precautions
+    if user
+      li
+        img#user-photo(src=`/img/users/${user.photo}`)
+        a#navName(href='/me')= `Hi, ${user.name}`
+      li
+        a(id='logoutbtn' href='/') Logout
+    else
+      li
+        a(href='/login') Log in
+      li
+        a(href='/signup') Sign up
+#searchbox
+  input(type='text' placeholder='Search Here')
+
+.header-container
+  .wrapper
+    header
+      .hero-content
+        h1 Medcare
+        p
+          | This is a platform designed specially to cater the medical needs of Elderly. <br>  In Emergency?
+        a(href='tel:102')
+          | Call Ambulance
+      .hero-image
+        img(src='/img/old.png' alt='')
+        .photo-bg
+    .social-icons
+      a(href='#')
+        img(src='/img/instagram-logo.png' alt='')
+      a(href='#')
+        img(src='/img/behance-logo.png' alt='')
+      a(href='#')
+        img(src='/img/dribbble-logo.png' alt='')
+
+main
+  a(href='#')
+    h2.section-heading All Blogs
+  section
+    .card
+      .card-image
+        a(href='#')
+      .card-description
+        a(href='https://www.westislandblog.com/safety-precautions-for-seniors-during-the-covid-19-pandemic/')
+          h3 Safety Precautions for Seniors During the COVID-19 Pandemic
+        p
+          | With the COVID-19 pandemic, there is a lot of uncertainty going on in the world, especially regarding what precautions seniors should take to keep them safe, such as a healthy planned lifestyle.
+          | Although anyone can get COVID-19, seniors are more susceptible to receiving the more serious end of the disease.
+        a.btn-readmore(href='https://www.westislandblog.com/safety-precautions-for-seniors-during-the-covid-19-pandemic/') Read more
+    .card
+      .card-image
+        a(href='https://www.goldencarers.com/50-activities-for-the-elderly-in-lockdown-and-isolation/6265/')
+      .card-description
+        a(href='https://www.goldencarers.com/50-activities-for-the-elderly-in-lockdown-and-isolation/6265/')
+          h3 50 Activities For The Elderly In Lockdown And Isolation
+        p
+        a.btn-readmore(href='https://www.goldencarers.com/50-activities-for-the-elderly-in-lockdown-and-isolation/6265/') Read more
+
+  footer
+    #left-footer
+      h3 Quick Links
+      p
+        ul
+          li
+            a(href='/') Home
+          li
+            a(href='/aboutcovid') About
+          li
+            a(hreg='/doctors') Contact Doctor
+          li
+            a(href='/medtracker') Medicine Timer
+
+    #right-footer
+      h3 Follow us on
+      #social-media-footer
+        ul
+          li
+            a(href='#')
+              i.fab.fa-facebook
+          li
+            a(href='#')
+              i.fab.fa-youtube
+          li
+            a(href='#')
+              i.fab.fa-github
+      p
+script(src='/js/index.js')
+script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js")
+script(src='/js/login.js')

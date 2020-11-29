@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylebook.css">
+
+</head>
+<body>
+    
+
+
+
+<form action="">
+    <!--  General -->
+    <div class="form-group">
+      <h2 class="heading">Booking Appointment</h2>
+      <div class="controls">
+        <input type="text" id="name" class="floatLabel" name="name" value="Name">
+        
+      </div>
+      <div class="controls">
+        <input type="text" id="email" class="floatLabel" name="email" value="email">
+        
+      </div>       
+      <div class="controls">
+        <input type="tel" id="phone" class="floatLabel" name="phone"  value="phone">
+        
+      </div>
+      <div class="grid">
+        <div class="col-2-3">
+          <div class="controls">
+           <input type="text" id="street" class="floatLabel" name="street"  value="Doctors Name">
+           
+          </div>          
+        </div>
+        
+    </div>
+    <!--  Details -->
+    <div class="form-group">
+      <h2 class="heading">Details</h2>
+      <div class="grid">
+      <div class="col-1-4 col-1-4-sm">
+        <div class="controls">
+          <input type="date" id="arrive" class="floatLabel" name="arrive" value="<?php echo date('Y-m-d'); ?>">
+          <label for="arrive" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Appointment Date</label>
+        </div>      
+      </div>
+      
+        </div>
+        <div class="grid">
+      
+      
+  
+      
+       </div>
+        <div class="grid">
+          <p class="info-text">Describe your ailment if you wish to </p>
+          <br>
+          <div class="controls">
+            <textarea name="comments" class="floatLabel" id="comments" value=""></textarea>
+            <label for="comments">Comments</label>
+            </div>
+              <button type="submit" value="Submit" class="col-1-4">Submit</button>
+        </div>  
+    </div> <!-- /.form-group -->
+  </form>
+
+</body>
+</html>

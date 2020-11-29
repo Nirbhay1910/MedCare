@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <table id = "mytable">
+            <tr>
+                <td>s.no</td>
+                <td>col1</td>
+                <td>col2</td>
+                <td id = "add" onclick="addfunction()">col1 + col2</td>
+                <td><button onclick="appendRow()">+</button> | <button onclick="deleteRow()">-</button></td>
+            </tr>
+        </table>
+
+        <audio id="myAudio">
+            <source src="oceanwave.mp3">
+        </audio>
+        <button class = "play" onclick="playAudio()"><i class="fas fa-play"></i></button>
+        <button class = "play" onclick="pauseAudio()"><i class="fas fa-pause"></i></button>
+        <button class = "play" onclick="rewindAudio()"><i class="fas fa-undo"></i></button>
+        <button class = "play" onclick="forwardAudio()"><i class="fas fa-redo"></i></button>
+        <button class = "play" onclick="soundup()"><i class="fas fa-volume-up"></i></button>
+        <button class = "play" onclick="sounddown()"><i class="fas fa-volume-down"></i></button>
+        <script src="script.js"></script>
+    </body>
+</html>
