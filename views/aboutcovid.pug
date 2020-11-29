@@ -1,0 +1,139 @@
+doctype html
+html
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1.0')
+		meta(http-equiv='X-UA-Compatible' content='ie=edge')
+		title HealthCare
+		link(rel='stylesheet' href='/css/style.css')
+	body
+		#slideout-menu
+			ul
+				li
+					a(href='/') Home
+				li
+					a(href='/medtracker') Medicine Timer
+				li
+					a(href='/contact') Contact Ambulance
+				li
+					a(href='/aboutcovid') Covid-19 Precautions
+				li
+					input(type='text' placeholder='Search Here')
+				if user
+					li
+						img#user-photo(src=`/img/users/${user.photo}`)
+						a#navName(href='#')= `Hi, ${user.name}`
+					li
+						a(href='#') Logout
+				else
+					li
+						a(href='/login') Log in
+					li
+						a(href='/signup') Sign up
+		nav
+			#logo-img
+				a(href='#')
+					img(src='/img/logo.jpg' alt='Medcare Logo')
+			#menu-icon
+				i.fas.fa-bars
+			ul
+				li
+					a.active(href='/') Home
+				li
+					a(href='/medtracker') Medicine Timer
+				li
+					a(href='/doctors') Contact Doctor
+				li
+					a(href='/aboutcovid') Covid-19 Precautions
+				if user
+					li
+						img#user-photo(src=`/img/users/${user.photo}`)
+						a#navName(href='/me')= `Hi, ${user.name}`
+					li
+						a(id='logoutbtn' href='#') Logout
+				else
+					li
+						a(href='/login') Log in
+					li
+						a(href='/signup') Sign up
+				li
+					#search-icon
+						i.fas.fa-search
+		#searchbox
+			input(type='text' placeholder='Search Here')
+		.landing
+			.landingText(data-aos='fade-up' data-aos-duration='1000')
+				h1
+					| Stay In.
+					span(style='color:#e0501b;font-size: 4vw')  Stay Safe.
+				h3
+					| Lets all work together to put an end to this pandemic. 
+					br
+					|  Help stop the spread.
+				.btn
+					a(href='#') Learn More
+			.landingImage(data-aos='fade-down' data-aos-duration='2000')
+				img(src='/img/bg.png' alt='')
+		// ABOUT SECTION
+		.about
+			.aboutText(data-aos='fade-up' data-aos-duration='1000')
+				h1
+					| Why is it important that 
+					br
+					span(style='color:#2f8be0;font-size:3vw') You Stay Home?
+				img(src='/img/doctor-woman-400px.png' alt='')
+			.aboutList(data-aos='fade-left' data-aos-duration='1000')
+				ol
+					li
+						span 01
+						p
+							| Covid-19, which is now a fast growing global pandemic. The number of confirmed cases worldwide has exceeded 25,65,000 due to rapid spreading of the virus.
+					li
+						span 02
+						p
+							| Covid-19, spreads very easily, much easier than many other regular illnesses we deal with on a regular basis. That&apos;s what makes it so dangerous.
+					li
+						span 03
+						p
+							| The best course of action is to stay at home prevent the spread of the disease as well as hospitals getting overwhelmed with patients who simply shoudn&apos;t be there.
+					li
+						span 04
+						p As of today, there is no know cure and no approved vaccine for Covid-19
+		// INFO SECTION
+		.infoSection
+			.infoHeader(data-aos='fade-up' data-aos-duration='1000')
+				h1
+					| Things you could do during the 
+					br
+					span(style='color:#e0501b') Coronavirus Quarantine.
+			.infoCards
+				.card.one(data-aos='fade-up' data-aos-duration='1000')
+					img.cardoneImg(src='/img/movie.png' alt='' data-aos='fade-up' data-aos-duration='1100')
+					.cardbgone
+					.cardContent
+						h2 stay safe
+						p How can elderly stay safe
+						a(href='https://www.cdc.gov/aging/covid19-guidance.html')
+							.cardBtn
+								img.cardIcon(src='/img/next.png' alt='')
+				.card.two(data-aos='fade-up' data-aos-duration='1300')
+					img.cardtwoImg(src='/img/learn.png' alt='' data-aos='fade-up' data-aos-duration='1200')
+					.cardbgtwo
+					.cardContent
+						h2 Corona Virus update 
+						p Live stats on corona virus
+						a(href='https://www.covid19india.org/')
+							.cardBtn
+								img.cardIcon(src='/img/next.png' alt='')
+				.card.three(data-aos='fade-up' data-aos-duration='1600')
+					img.cardthreeImg(src='/img/videocall.png' alt='' data-aos='fade-up' data-aos-duration='1300')
+					.cardbgone
+					.cardContent
+						h2 Video Call
+						p Learn more about Zoom guide for Senior Citizens
+						a(href='https://www.seniorsguide.com/technology/a-step-by-step-guide-to-a-zoom-meeting/')
+							.cardBtn
+								img.cardIcon(src='/img/next.png' alt='')
+script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js")
+//script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.map")
+script(src='/js/login.js')

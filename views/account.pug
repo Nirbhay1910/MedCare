@@ -1,0 +1,74 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/css/styleaccount.css')
+  title Document
+.admin
+  header.admin__header
+    a.logo(href='#')
+      h1 Medcare Profile
+    .toolbar
+      .toolbar__left
+        a.btn.btn--primary(href='/') Home
+      .toolbar__right
+        button#logoutbtn.btn.btn--primary.logout Log Out
+  nav.admin__nav
+    ul.menu
+      li.menu__title Dashboard
+      li.menu__item
+        a.menu__link.is-active(href='#') Settings
+      li.menu__item
+        a.menu__link(href='/appointment') Your Appointments
+  main.admin__main
+    .dashboard
+      .container
+        #logo
+          h1.logo Medcare
+          .CTA
+            h1
+        .leftbox
+          nav
+            a#profile.active
+              i.fa.fa-user
+            a#payment
+              i.fa.fa-credit-card
+            a#subscription
+              i.fa.fa-tv
+            a#privacy
+              i.fa.fa-tasks
+            a#settings
+              i.fa.fa-cog
+        .rightbox
+          .profile
+            h1 Personal Info
+            h2 Name
+            input#nameChange.input(type='text' value=`${user.name}`)
+            h2 Email
+            input#emailChange.input(type='text' value=`${user.email}`)
+            h2 Change photo
+            img#user-photo(src=`/img/users/${user.photo}`)
+            br
+            br
+            input#uploadUserPhoto.input(type='file', accept='image/*', name='photo')
+            br
+            p
+              button#updateSettings.btn Update
+            br
+            br
+            h2 Current Password 
+            input#currentPassword.input(type='password' placeholder='••••••• ')
+            h2 New Password 
+            input#newPassword.input(type='password' placeholder='••••••• ')
+            h2 Confirm  Password 
+            input#confirmPassword.input(type='password' placeholder='••••••• ')
+            br
+            p
+              button#updatePassword.btn Update
+  footer.admin__footer
+    span &copy; 2020 Medcare.
+    span
+      a.help(href='#1') Ask for help
+script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js")
+script(src='/js/login.js')
+script(src='/js/update.js')

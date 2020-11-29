@@ -1,0 +1,62 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/css/style.css')
+  //- link(rel='stylesheet' href='/css/stylemed.css')
+  title Error
+#slideout-menu
+  ul
+    li
+      a(href='/') Home
+    li
+      a(href='/medtracker') Medicine Timer
+    li
+      a(href='/aboutcovid') Covid-19 Precautions
+    li
+      input(type='text' placeholder='Search Here')
+    if user
+      li
+        img#user-photo(src=`/img/users/${user.photo}`)
+        a#navName(href='#')= `Hi, ${user.name}`
+      li
+        a(href='#') Logout
+    else
+      li
+        a(href='/login') Log in
+      li
+        a(href='/signup') Sign up
+nav
+  #logo-img
+    a(href='#')
+      img(src='/img/logo.jpg' alt='Medcare Logo')
+  #menu-icon
+    i.fas.fa-bars
+  ul
+    li
+      a.active(href='/') Home
+    li
+      a(href='/medtracker') Medicine Timer
+    li
+      a(href='/doctors') Contact Doctor
+    li
+      a(href='/aboutcovid') Covid-19 Precautions
+    if user
+      li
+        img#user-photo(src=`/img/users/${user.photo}`)
+        a#navName(href='/me')= `Hi, ${user.name}`
+      li
+        a(id='logoutbtn' href='#') Logout
+    else
+      li
+        a(href='/login') Log in
+      li
+        a(href='/signup') Sign up
+    //- li
+    //-   #search-icon
+    //-     i.fas.fa-search
+
+
+h2.heading-err Uh oh! Something went wrong!   
+.error__msg= msg  
+script(src='/js/index.js')
